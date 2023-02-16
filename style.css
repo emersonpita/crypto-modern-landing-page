@@ -93,6 +93,7 @@ header {
 
 .logo {
     margin-top: 8px;
+    width: 70px;
 }
 
 .nav-menu {
@@ -303,6 +304,7 @@ header input:checked ~ .overlay {
     background-color: #160129;
     background-image: url('img/Background.jpg');
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -506,7 +508,6 @@ header input:checked ~ .overlay {
 .principal-text-section3 {
     display: flex;
     flex-direction: column;
-    visibility: hidden;
 }
 
 .principal-text-section3 h3 {
@@ -543,7 +544,6 @@ header input:checked ~ .overlay {
 .img-container-section3 {
     display: flex;
     justify-content: center;
-    visibility: hidden;
     width: 33%;
 }
 
@@ -570,7 +570,6 @@ header input:checked ~ .overlay {
 .principal-text-section4 {
     display: flex;
     flex-direction: column;
-    visibility: hidden;
 }
 
 .principal-text-section4 h3 {
@@ -604,7 +603,6 @@ header input:checked ~ .overlay {
     flex-direction: column;
     box-shadow: 5px 5px 50px 0 #0f001b;
     backdrop-filter: blur(12px);
-    visibility: hidden;
 }
 
 .card img {
