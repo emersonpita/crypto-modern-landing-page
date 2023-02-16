@@ -86,7 +86,7 @@ header {
 .header-container {
     display: flex;
     align-items: center;
-    width: 1366px;
+    width: 80%;
     justify-content: space-between;
     z-index: 10;
 }
@@ -161,6 +161,140 @@ header {
     transition: 0.3s ease-in-out;
 }
 
+header input {
+    display: none;
+}
+
+header input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+}
+
+header input:checked ~ label .hamburguer::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+header input:checked ~ label .hamburguer::after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+label {
+    display: none;
+}
+
+.mobile-menu {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -70%;
+    width: 70%;
+    height: 100vh;
+    background-color: #160129;
+    z-index: 1000;
+    transition: 0.2s ease-out;
+}
+
+header input:checked ~ .sidebar {
+    left: 0;
+    box-shadow: 0 0 100px 0 #000;
+}
+
+.nav-menu2 {
+    margin-top: 100px;
+    margin-left: 15%;
+    margin-bottom: 65px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-menu2 {
+    text-decoration: none;
+    color: rgb(123, 123, 156);
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    font-size: 40px;
+}
+
+.item-menu2.active {
+    color: #f5f5f5;
+}
+
+.item-menu2:active {
+    color: #f5f5f5;
+    transition: 0.2s ease-in-out;
+}
+
+.contact2 {
+    margin-left: 15%;
+    text-decoration: none;
+    color: #1c0035;
+    padding: 10px 20px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 30px;
+    background-color: #f5f5f5;
+}
+
+.contact2:active {
+    background-color: #a0a0a0;
+    transition: 0.3s;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    pointer-events: none;
+}
+
+header input:checked ~ .overlay {
+    opacity: 1;
+}
+
+.hamburguer {
+    position: relative;
+    display: block;
+    background-color: #f5f5f5;
+    width: 30px;
+    height: 2px;
+    left: 5px;
+    top: 19px;
+    transition: .3s ease-in-out;
+    z-index: 1001;
+}
+
+.hamburguer::before, .hamburguer::after {
+    background: #f5f5f5;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .3s ease-in-out;
+}
+
+.hamburguer::before {
+    top: -10px;
+}
+
+.hamburguer::after {
+    bottom: -10px;
+}
+
 .section-1 {
     display: flex;
     align-items: center;
@@ -192,7 +326,6 @@ header {
     white-space: nowrap;
     overflow: hidden;
     animation: blinkCursor 1000ms steps(40) infinite normal, typing 1.5s steps(40) 1s normal both;
-
 }
 
 @keyframes blinkCursor {
@@ -224,10 +357,11 @@ header {
     font-size: 18px;
     font-weight: 500;
     z-index: 1;
+    text-shadow: 1px 1px 5px #000;
 }
 
 .central-container-section1 {
-    width: 1366px;
+    width: 80%;
     display: flex;
     justify-content: flex-end;
 }
@@ -270,7 +404,7 @@ header {
 
 .central-container-section2 {
     padding-top: 200px;
-    width: 1366px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -278,17 +412,14 @@ header {
 
 .img-container-section2 {
     display: flex;
-    width: 600px;
-}
-
-.img-container-section2 img {
-    margin-left: 70px;
+    justify-content: center;
+    width: 50%;
 }
 
 .text-container-section2 {
     display: flex;
     flex-direction: column;
-    width: 650px;
+    width: 50%;
     align-items: baseline;
 }
 
@@ -369,7 +500,7 @@ header {
 }
 
 .limit-section3 {
-    width: 1366px;
+    width: 80%;
 }
 
 .principal-text-section3 {
@@ -393,7 +524,7 @@ header {
 
 .central-container-section3 {
     display: flex;
-    padding-top: 50px;
+    padding-top: 100px;
     justify-content: space-between;
     align-items: center;
 }
@@ -410,15 +541,20 @@ header {
 }
 
 .img-container-section3 {
+    display: flex;
+    justify-content: center;
     visibility: hidden;
+    width: 33%;
 }
 
 .text-container-section3 {
-    width: 300px;
+    text-align: center;
+    width: 30%;
 }
 
 .text2-container-section3 {
-    width: 300px;
+    text-align: center;
+    width: 30%;
 }
 
 .section-4 {
@@ -428,7 +564,7 @@ header {
 }
 
 .limit-section4 {
-    width: 1366px;
+    width: 80%;
 }
 
 .principal-text-section4 {
@@ -453,12 +589,12 @@ header {
 .team-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 1%;
 }
 
 .card {
-    width: 22%;
+    width: 470px;
     padding: 40px 25px;
     border: 1px solid #b800ff;
     border-radius: 15px;
@@ -491,7 +627,7 @@ header {
 
 .card p {
     color: rgb(183, 183, 218);
-    font-size: 13px;
+    font-size: 15px;
     text-align: center;
     padding-top: 15px;
 }
@@ -512,12 +648,12 @@ footer {
     flex-direction: column;
     align-items: center;
     padding: 35px 35px;
-    width: 760px;
+    width: 1075px;
     border-radius: 20px;
-    background-color: #1c0035;
-    border: 2px solid #25093b;
+    backdrop-filter: blur(20px);
+    box-shadow: 5px 5px 50px 0 #0f001b;
+    border: 1px solid #b800ff;
     margin-bottom: 35px;
-    visibility: hidden;
 }
 
 footer h3 {
@@ -594,4 +730,583 @@ footer p {
     font-weight: 300;
     padding-bottom: 35px;
     text-align: center;
+}
+
+@media (max-width: 1920px) {
+
+.img-container-section3 {
+    width: 40%;
+}
+
+.img-container-section3 img {
+    width: 575px;
+}
+
+.card {
+    width: 340px;
+}
+
+.form-container {
+    width: 815px;
+}
+
+}
+
+@media (max-width: 1440px) {
+
+.item-menu {
+    font-size: 14px;
+}
+
+.contact {
+    font-size: 14px;
+}
+
+.container-section1 {
+    width: 450px;
+}    
+
+.container-section1 h1 {
+    font-size: 44px;
+}
+
+@keyframes typing {
+    from{width: 0;}
+    to{width: 453px;}
+}
+
+.container-section1 p {
+    font-size: 14px;
+}
+
+.invest-btn {
+    margin-top: 18px;
+    font-size: 14px;
+    padding: 10px 80px;
+}
+
+.text-container-section2 h3 {
+    font-size: 40px;
+}
+
+.text-container-section2 p {
+    font-size: 14px;
+}
+
+.readmore-btn {
+    font-size: 14px;
+    padding: 10px 80px;
+}
+
+.img-container-section2 img {
+    width: 300px;
+}
+
+.section-2-5 {
+    height: 150px;
+}
+
+.principal-text-section3 h3 {
+    font-size: 40px;
+}
+
+.principal-text-section3 p {
+    font-size: 14px;
+}
+
+.central-container-section3 h4 {
+    font-size: 22px;
+}
+
+.central-container-section3 p {
+    font-size: 14px;
+}
+
+.principal-text-section4 h3 {
+    font-size: 40px;
+}
+
+.principal-text-section4 p {
+    font-size: 14px;
+}
+
+.card {
+    width: 270px;
+    margin-top: 35px;
+}
+
+.card h4 {
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.form-container {
+    width: 600px;
+}
+
+.form-container h3 {
+    font-size: 30px;
+}
+
+form input, textarea {
+    font-size: 14px;
+}
+
+form button {
+    font-size: 14px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+}
+
+@media (max-width: 1366px) {
+
+.nav-menu {
+    padding-left: 0;
+}
+
+.readmore-btn {
+    margin-top: 24px;
+}
+
+.card {
+    width: 240px;
+}
+
+}
+
+@media (max-width: 1024px) {
+
+.central-container-section1 {
+    justify-content: center;
+}
+
+.container-section1 {
+    align-items: center;
+    text-align: center;
+}
+
+.text-container-section2 h3 {
+    font-size: 35px;
+}
+
+.text-container-section2 p {
+    font-size: 12px;
+}
+
+.readmore-btn {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.img-container-section2 img {
+    width: 250px;
+}
+
+.principal-text-section3 h3 {
+    font-size: 35px;
+}
+
+.principal-text-section3 p {
+    font-size: 12px;
+}
+
+.central-container-section3 {
+    padding-top: 80px;
+}
+
+.text-container-section3 p {
+    font-size: 12px;
+}
+
+.img-container-section3 {
+    width: 50%;
+}
+
+.text2-container-section3 p {
+    font-size: 12px;
+}
+
+.principal-text-section4 h3 {
+    font-size: 35px;
+}
+
+.principal-text-section4 p {
+    font-size: 12px;
+}
+
+.card {
+    width: 190px;
+}
+
+.card img {
+    width: 150px;
+}
+
+.card h4 {
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 12px;
+}
+
+.form-container {
+    width: 500px;
+}
+
+form input, textarea, button {
+    font-size: 12px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+.circulo3 {
+    top: 3200px;
+}
+
+.circulo4 {
+    top: 4000px;
+}
+
+}
+
+@media (max-width: 800px) {
+
+.circulo1, .circulo2, .circulo3, .circulo4 {
+    display: none;
+}
+
+.nav-menu, .contact {
+    display: none;
+}
+
+label {
+    display: block;
+}
+
+header {
+    width: 100vw;
+}
+
+.container-section1 {
+    margin-right: 0;
+}
+
+.text-container-section2 h3 {
+    font-size: 26px;
+}
+
+.text-container-section2 p {
+    font-size: 12px;
+}
+
+.readmore-btn {
+    font-size: 12px;
+}
+
+.img-container-section2 img {
+    width: 225px;
+}
+
+.central-container-section2 {
+    padding-top: 100px;
+}
+
+.section-2-5 {
+    margin-top: 100px;
+}
+
+.section-3 {
+    padding-top: 100px;
+}
+
+.principal-text-section3 h3 {
+    font-size: 26px;
+}
+
+.principal-text-section3 p {
+    font-size: 12px;
+}
+
+.text-container-section3 h4 {
+    font-size: 18px;
+}
+
+.text-container-section3 p {
+    font-size: 10px;
+}
+
+.img-container-section3 {
+    width: 60%;
+}
+
+.text2-container-section3 h4 {
+    font-size: 18px;
+}
+
+.text2-container-section3 p {
+    font-size: 10px;
+}
+
+.section-4 {
+    padding-top: 100px;
+}
+
+.principal-text-section4 h3 {
+    font-size: 26px;
+}
+
+.principal-text-section4 p {
+    font-size: 12px;
+}
+
+.card {
+    width: 295px;
+}
+
+.card h4 {
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 12px;
+}
+
+.form-container {
+    width: 80%;
+}
+
+.form-container h3 {
+    font-size: 26px;
+}
+
+form input, textarea {
+    font-size: 12px;
+}
+
+}
+
+@media (max-width: 600px) {
+
+.invest-btn {
+    padding: 10px 120px;
+}
+
+.central-container-section2 {
+    flex-direction: column;
+}
+
+.text-container-section2 {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.text-container-section2 h3 {
+    font-size: 36px;
+    padding-bottom: 12px;
+}
+
+.text-container-section2 p {
+    font-size: 14px;
+}
+
+.readmore-btn {
+    margin-top: 28px;
+    padding: 10px 120px;
+    font-size: 14px;
+}
+
+.img-container-section2 {
+    width: 100%;
+}
+
+.img-container-section2 img {
+    width: 300px;
+}
+
+.principal-text-section3 h3 {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.principal-text-section3 p {
+    font-size: 14px;
+}
+
+.central-container-section3 {
+    flex-direction: column;
+}
+
+.space {
+    display: none;
+}
+
+.text-container-section3 {
+    margin-top: -50px;
+    width: 100%;
+}
+
+.text-container-section3 h4 {
+    font-size: 24px;
+}
+
+.text-container-section3 p {
+    font-size: 14px;
+    padding-bottom: 50px;
+}
+
+.img-container-section3 {
+    width: 100%;
+}
+
+.text2-container-section3 {
+    padding-top: 40px;
+    width: 100%;
+}
+
+.text2-container-section3 h4 {
+    font-size: 24px;
+}
+
+.text2-container-section3 p {
+    font-size: 14px;
+    padding-bottom: 50px;
+}
+
+.principal-text-section4 h3 {
+    font-size: 30px;
+}
+
+.principal-text-section4 p {
+    font-size: 14px;
+}
+
+.card {
+    width: 100%;
+}
+
+.card h4 {
+    font-size: 26px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.form-container {
+    width: 80%;
+}
+
+.form-container h3 {
+    font-size: 36px;
+}
+
+form input, textarea, button {
+    font-size: 14px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+}
+
+@media (max-width: 510px) {
+
+.item-menu2 {
+    font-size: 30px;
+}
+
+.contact2 {
+    font-size: 25px;
+}
+
+.container-section1 {
+    width: 100%;
+}
+
+.container-section1 h1 {
+    font-size: 34px;
+}
+
+@keyframes typing {
+    from{width: 0;}
+    to{width: 350px;}
+}
+
+.container-section1 p {
+    font-size: 14px;
+}
+
+.invest-btn {
+    width: 100%;
+    padding: 10px;
+}
+
+}
+
+@media (max-width: 375px) {
+
+.item-menu2 {
+    font-size: 25px;
+}
+
+.contact2 {
+    font-size: 20px;
+}
+
+.central-container-section1 {
+    justify-content: center;
+}
+
+.container-section1 h1 {
+    font-size: 30px;
+}
+
+@keyframes typing {
+    from{width: 0;}
+    to{width: 310px;}
+}
+
+.readmore-btn {
+    width: 100%;
+    padding: 10px;
+}
+
+.form-container h3 {
+    font-size: 30px;
+}
+
+}
+
+@media (max-width: 330px) {
+
+.nav-menu2, .contact2 {
+    margin-left: 12%;
+}
+
+.container-section1 h1 {
+    font-size: 28px;
+}
+
+@keyframes typing {
+    from{width: 0;}
+    to{width: 290px;}
+}
+
+.form-container h3 {
+    font-size: 28px;
+}
+
 }

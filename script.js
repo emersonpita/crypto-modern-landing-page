@@ -1,18 +1,18 @@
 // Animações de Entrada. (ScrollReveal)
-window.sr = ScrollReveal({reset: true});
+window.sr = ScrollReveal({reset: true,});
 
 sr.reveal("header", {duration: 1500});
-sr.reveal(".container-section1", {distance: "300px", origin: "left", duration: 1500});
+sr.reveal("sidebar", {duration: 1500});
+sr.reveal(".container-section1", {duration: 1500});
 sr.reveal(".text-container-section2", {duration: 1500});
 sr.reveal(".img-container-section2", {duration: 1500});
 sr.reveal(".section-2-5", {duration: 1500});
 sr.reveal(".principal-text-section3", {duration: 1500});
-sr.reveal(".img-container-section3", {distance: "100px", origin: "bottom", duration: 1500});
-sr.reveal(".text-container-section3", {distance: "300px", origin: "left", duration: 1500});
-sr.reveal(".text2-container-section3", {distance: "300px", origin: "right", duration: 1500});
+sr.reveal(".img-container-section3", {duration: 1500});
+sr.reveal(".text-container-section3", {duration: 1500});
+sr.reveal(".text2-container-section3", {duration: 1500});
 sr.reveal(".principal-text-section4", {duration: 1500});
-sr.reveal(".card", {distance: "300px", origin: "bottom", duration: 1500});
-sr.reveal(".form-container", {duration: 1500});
+sr.reveal(".card", {duration: 1500});
 
 // Armazena os links do menu de navegação
 const navigationLinks = document.querySelectorAll(".item-menu");
@@ -37,6 +37,21 @@ window.addEventListener('scroll', function() {
       navigationLinks[i].classList.remove('active');
     }
   }
+});
+
+// Armazena o checkbox do menu, o menu de navegação e o botão de contato
+const checkbox = document.querySelector("#hamburguer-menu");
+const navMenu = document.querySelector(".nav-menu2");
+const contact = document.querySelector(".contact2");
+
+// Adiciona o evento de click no menu para fechar a sidebar
+navMenu.addEventListener("click", () => {
+  checkbox.checked = false;
+});
+
+// Adiciona o evento de click no botão de contato para fechar a sidebar
+contact.addEventListener("click", () => {
+  checkbox.checked = false;
 });
 
 // Armazena o formulário
@@ -81,3 +96,4 @@ const form = document.getElementById("form");
 
     }, 2000);
   }
+
