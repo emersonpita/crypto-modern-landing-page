@@ -301,7 +301,7 @@ header input:checked ~ .overlay {
     justify-content: center;
     height: 100vh;
     background-color: #160129;
-    background-image: url(../img/background.jpg);
+    background-image: url('img/Background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
