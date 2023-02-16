@@ -1002,6 +1002,10 @@ header {
     width: 50px;
 }
 
+.section-1 {
+    background-image: url('img/Backgroundimage.jpg');
+}
+
 .container-section1 {
     margin-right: 0;
 }
