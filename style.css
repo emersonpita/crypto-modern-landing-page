@@ -1012,6 +1012,10 @@ header {
     margin-right: 0;
 }
 
+.section-1 p {
+    color: #f5f5f5;
+}
+
 .text-container-section2 h3 {
     font-size: 26px;
 }
