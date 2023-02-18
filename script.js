@@ -2,17 +2,7 @@
 window.sr = ScrollReveal({reset: true,});
 
 sr.reveal("header", {duration: 1500});
-sr.reveal("sidebar", {duration: 1500});
 sr.reveal(".container-section1", {duration: 1500});
-sr.reveal(".text-container-section2", {duration: 1500});
-sr.reveal(".img-container-section2", {duration: 1500});
-sr.reveal(".section-2-5", {duration: 1500});
-sr.reveal(".principal-text-section3", {duration: 1500});
-sr.reveal(".img-container-section3", {duration: 1500});
-sr.reveal(".text-container-section3", {duration: 1500});
-sr.reveal(".text2-container-section3", {duration: 1500});
-sr.reveal(".principal-text-section4", {duration: 1500});
-sr.reveal(".card", {duration: 1500});
 
 // Armazena os links do menu de navegação
 const navigationLinks = document.querySelectorAll(".item-menu");
